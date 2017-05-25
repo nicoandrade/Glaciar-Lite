@@ -1,0 +1,547 @@
+/*
+Footer
+------------------------
+*/
+.footer-wrap{
+	overflow: hidden;
+	background-color: @gray-lighter2;
+}
+#footer{
+	background-color: @gray-lighter2;
+	padding: 5em 0 3.125em 0;
+	color: @gray-light;
+	.font-size(14);
+	position: relative;
+}
+#footer p{
+	padding-top: 10px;
+	margin: 0;
+}
+#footer a{
+	.font-size(14);
+}
+#footer h2, #footer h3, #footer h4{
+	color: @heroColor;
+}
+#footer a:hover{
+	text-decoration: underline;
+}
+
+#footer select{
+	color: @gray;
+	margin-left: 5px;
+}
+
+
+#footer .widget{
+	margin-bottom: 1.875rem;
+}
+#footer .widget h4{
+	.font-size(18);
+	text-transform: uppercase;
+	margin-bottom: 1.25em;
+}
+
+#footer ul, footer ol{
+	list-style:none;
+	margin-left:0;
+	padding-left: 0;
+}
+#footer ul li, footer ol li{
+	display: inline-block;
+	vertical-align: top;
+	width: 46%;
+	margin-right: 2%;
+}
+#footer ul li > a, footer ol li > a{
+	display: block;
+	padding: 8px 0;
+	color: inherit;
+	.transition( text-indent 200ms);
+	position: relative;
+	&:hover{
+		//text-indent: 10px;
+		text-decoration: none;
+	}
+	&:after{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		.transition( width 500ms cubic-bezier(0.075, 0.82, 0.165, 1));
+		content: " ";
+		display: block;
+		width: 0;
+		height: 1px;
+		background-color: rgba(0,0,0,0.3);
+	}
+	&:hover:after{
+		width: 100%;
+	}
+}
+
+
+#footer .widget ul li:first-child{
+	border-top:none;
+}
+#footer .widget ul li ul li:last-child{
+	border:none;
+}
+#footer .widget ul li ul{
+	margin-left:30px;
+	margin-bottom:0;
+	margin-top:0!important;
+}
+#footer .widget ul li ul, #sidebar .widget ul li ul li ul{
+	display:none;
+}
+#footer .hasChildren {
+	position: relative;
+}
+#footer .hasChildren i{
+	position: absolute;
+	top: 12px;
+	right: 5px;
+	font-size: 1.16666666666667em;
+}
+
+
+/*-----------Decoration SVG on Footer-----------------*/
+.glaciar-footer-svg{
+	position: absolute;
+	.rotate(0deg);
+	width: 90px;
+	right: 40px;
+	bottom: -90%;
+	.transition(all 800ms cubic-bezier(0.785, 0.135, 0.15, 0.86));
+	opacity: 0.03;
+	z-index: 2;
+
+		path{
+            stroke: #000;
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: square;
+        }
+}
+
+/*-----------Contact Info Widget-----------------*/
+#footer .widget_contact_info li{
+	display: block;
+	width: 100%;
+	margin-bottom: 12px;
+}
+#footer .widget_contact_info li i{
+	margin-right: 10px;
+	text-align: center;
+}
+#footer .widget_contact_info li a{
+	display: inline;
+}
+
+
+
+/*----------- Portfolio Widget -----------------*/
+.widget_glaciar_lite_portfolio .widget-portfolio-wrap .widget-portfolio-item{
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
+
+.widget_glaciar_lite_portfolio .widget-portfolio-wrap .widget-portfolio-item a{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	&:after{
+		.transition(opacity 200ms);
+		opacity: 0;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+		content: " ";
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: 1;
+	}
+	&:hover:after{
+		opacity: 1;
+	}
+	&:before{
+		.transition(all 200ms);
+		.transition-delay(100ms);
+		.translate(-50%;-50%);
+		opacity: 0;
+		display: block;
+		z-index: 2;
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		content: "\f067";
+		color: #fff;
+		font: normal normal normal 14px/1 FontAwesome;
+		font-size: inherit;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	&:hover:before{
+		top: 50%;
+		opacity: 1;
+	}
+}
+
+
+
+
+/*-----------Recent & Popular Posts Widget-----------------*/
+.widget_recent_posts ul li, .widget_popular_posts ul li{
+	margin-bottom: 0.6em;
+	min-height: 55px;
+}
+.widget_recent_posts ul li .recent-post-img, .widget_popular_posts ul li .recent-post-img{
+	position:relative;
+	float:left;
+	margin-right:10px;
+}
+.widget_recent_posts ul li .recent-post-img a, .widget_popular_posts ul li .recent-post-img a{
+	display:block;
+}
+.widget_recent_posts ul li .recent-post-img span, .widget_popular_posts ul li .recent-post-img span{
+	box-shadow: 0 0px 1px rgba(255, 255, 255, .7) inset;
+	-moz-box-shadow:  0 0px 1px rgba(255, 255, 255, .7) inset;
+	-webkit-box-shadow:  0 0px 1px rgba(255, 255, 255, .7) inset;
+	position:absolute;
+	width:50px;
+	height:50px;
+	display:block;
+	top:1px;
+	left:1px;
+}
+.widget_recent_posts ul li .recent-post-img img, .widget_popular_posts ul li .recent-post-img img{
+
+}
+.widget_recent_posts ul li h6, .widget_popular_posts ul li h6{
+	font-weight:bold;
+	font-size: 0.91666666666667em;
+	line-height: 1.2em;
+	margin-top: 0;
+}
+.widget_recent_posts ul li h6 a, .widget_popular_posts ul li h6 a{
+	color:@heroColor;
+}
+.widget_recent_posts ul li h6 a:hover, .widget_popular_posts ul li h6 a:hover{
+	text-decoration:none;
+	color:#d7d7d7;
+}
+.widget_recent_posts ul li time, .widget_popular_posts ul li time{
+	font-size:0.95652173913043em;
+	color: @gray-light;
+}
+
+
+
+
+
+
+
+/*-----------Social Widget-----------------*/
+footer .social a{
+	margin:7px 7px 7px 0;
+}
+
+
+
+
+/*----------- Work Button Widget -----------------*/
+.widget_glaciar_lite_work_button{
+	padding: 5% 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+		.widget_glaciar_lite_work_title{
+			.font-size(34) !important;
+			display: inline-block;
+			text-transform: none !important;
+			width: 50%;
+			margin-right: 5%;
+			margin-bottom: 0 !important;
+		}
+		.ql_primary_btn{
+		}
+}
+
+/*
+==========================================
+Footer Top
+==========================================
+*/
+.footer-top{
+	overflow: hidden;
+	width: 100%;
+	margin-top: 5%;
+
+		ul{
+			padding-left: 0;
+			margin: 0;
+			display: block;
+			height: 35px;
+			width: 200%;
+
+				li{
+					width: 0;
+					height: 0;
+					border-style: solid;
+					border-width: 0 86px 35px 86px;
+					border-color: transparent transparent @gray-lighter2 transparent;
+					display: inline-block;
+				}
+		}
+}
+
+
+
+/*
+==========================================
+Subfooter
+==========================================
+*/
+.sub-footer{
+	background-color: transparent;
+	padding: 15px 0;
+	color: lighten( @gray, 10% );
+	.font-size(13);
+	position: relative;
+	z-index: 3;
+}
+.sub-footer p{
+	margin-bottom: 0;
+	float: left;
+	line-height: 35px;
+}
+.sub-footer a{
+	color: @gray-light;
+	&:hover{
+		color: @heroColor;
+		text-decoration: underline;
+	}
+}
+
+
+
+
+
+/*
+==========================================
+Social Nav
+==========================================
+*/
+.nav_social{
+	position: relative;
+	text-align: center;
+	float: right;
+}
+.widget #menu-social{
+	padding-left: 0;
+	list-style: none;
+}
+.nav_social li, .widget #menu-social li{
+	text-align: center;
+	position: relative;
+	float: left;
+	margin-left: 10px;
+}
+.nav_social li a, .widget #menu-social li a{
+	padding: 0;
+	overflow: hidden;
+	display: block;
+	position: relative;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	color: @gray-light2;
+	.transition(background 200ms);
+	text-decoration: none;
+	text-align: center;
+	font-weight: normal;
+	border-radius: 3px;
+}
+.nav_social li a:hover, .widget #menu-social li a:hover{
+	color: #fff;
+}
+
+.nav_social li a::before, .widget #menu-social li a::before{
+	display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: auto; // optimizelegibility throws things off #1094
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    text-decoration: inherit;
+    font-size: 18px;
+    line-height: 1em;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    color: inherit;
+    text-decoration: none!important;
+}
+.widget #menu-social li a{
+	width: 50px;
+	height: 50px;
+	line-height: 58px;
+	padding: 0 !important;
+	vertical-align: middle;
+	color: @heroColor;
+}
+.widget #menu-social li a::before{
+	.font-size(28);
+	width: 28px;
+	height: 28px;
+}
+.nav_social li a:hover::before, .widget #menu-social li a:hover::before{
+	color: #fff;
+	.animation(social_icons_anim 500ms ease);
+}
+
+
+@-webkit-keyframes social_icons_anim {
+	0%  { .translate(0; -30px); opacity: 0; }
+	60% { .translate(0; 2px); opacity: 1; }
+	100% { .translate(0; 0); }
+}
+@-moz-keyframes social_icons_anim {
+	0%  { .translate(0; -30px); opacity: 0; }
+	60% { .translate(0; 2px); opacity: 1; }
+	100% { .translate(0; 0); }
+}
+@-o-keyframes social_icons_anim {
+	0%  { .translate(0; -30px); opacity: 0; }
+	60% { .translate(0; 2px); opacity: 1; }
+	100% { .translate(0; 0); }
+}
+@keyframes social_icons_anim {
+	0%  { .translate(0; -30px); opacity: 0; }
+	60% { .translate(0; 2px); opacity: 1; }
+	100% { .translate(0; 0); }
+}
+
+.nav_social li a[href*="facebook.com"]::before, #menu-social li a[href*="facebook.com"]::before { content: "\f09a"; }
+.nav_social li a[href*="facebook.com"]:hover, #menu-social li a[href*="facebook.com"]:hover { background-color:#3B5998; }
+
+.nav_social li a[href*="twitter.com"]::before, #menu-social li a[href*="twitter.com"]::before { content: "\f099"; }
+.nav_social li a[href*="twitter.com"]:hover, #menu-social li a[href*="twitter.com"]:hover { background-color:#33CCFF; }
+
+.nav_social li a[href*="dribbble.com"]::before, #menu-social li a[href*="dribbble.com"]::before { content: "\f17d"; }
+.nav_social li a[href*="dribbble.com"]:hover, #menu-social li a[href*="dribbble.com"]:hover { background-color:#C5376D; }
+
+.nav_social li a[href*="instagram.com"]::before, #menu-social li a[href*="instagram.com"]::before { content: "\f16d"; }
+.nav_social li a[href*="instagram.com"]:hover, #menu-social li a[href*="instagram.com"]:hover { background-color:#e33567; }
+
+.nav_social li a[href*="flickr.com"]::before, #menu-social li a[href*="flickr.com"]::before { content: "\f16e"; }
+.nav_social li a[href*="flickr.com"]:hover, #menu-social li a[href*="flickr.com"]:hover { background-color:#FF0084; }
+
+.nav_social li a[href*="youtube.com"]::before, #menu-social li a[href*="youtube.com"]::before { content: "\f167"; }
+.nav_social li a[href*="youtube.com"]:hover, #menu-social li a[href*="youtube.com"]:hover { background-color:#C1302A; }
+
+.nav_social li a[href*="github.com"]::before, #menu-social li a[href*="github.com"]::before { content: "\f09b"; }
+.nav_social li a[href*="github.com"]:hover, #menu-social li a[href*="github.com"]:hover { background-color:#2f2f2f; }
+
+.nav_social li a[href*="vimeo.com"]::before, #menu-social li a[href*="vimeo.com"]::before { content: "\f194"; }
+.nav_social li a[href*="vimeo.com"]:hover, #menu-social li a[href*="vimeo.com"]:hover { background-color:#1AB7EA; }
+
+.nav_social li a[href*="foursquare.com"]::before, #menu-social li a[href*="foursquare.com"]::before { content: "\f180"; }
+.nav_social li a[href*="foursquare.com"]:hover, #menu-social li a[href*="foursquare.com"]:hover { background-color:#1DAFEC; }
+
+.nav_social li a[href*="skype.com"]::before, #menu-social li a[href*="skype.com"]::before { content: "\f17e"; }
+.nav_social li a[href*="skype.com"]:hover, #menu-social li a[href*="skype.com"]:hover { background-color:#00AFF0; }
+
+.nav_social li a[href*="plus.google.com"]::before, #menu-social li a[href*="plus.google.com"]::before { content: "\f0d5"; }
+.nav_social li a[href*="plus.google.com"]:hover, #menu-social li a[href*="plus.google.com"]:hover { background-color:#D5402B; }
+
+.nav_social li a[href*="tumblr.com"]::before, #menu-social li a[href*="tumblr.com"]::before { content: "\f173"; }
+.nav_social li a[href*="tumblr.com"]:hover, #menu-social li a[href*="tumblr.com"]:hover { background-color:#343B4A; }
+
+.nav_social li a[href*="linkedin.com"]::before, #menu-social li a[href*="linkedin.com"]::before { content: "\f0e1"; }
+.nav_social li a[href*="linkedin.com"]:hover, #menu-social li a[href*="linkedin.com"]:hover { background-color:#0073B2; }
+
+.nav_social li a[href*="pinterest.com"]::before, #menu-social li a[href*="pinterest.com"]::before { content: "\f231"; }
+.nav_social li a[href*="pinterest.com"]:hover, #menu-social li a[href*="pinterest.com"]:hover { background-color:#CB2027; }
+
+.nav_social li a[href*="/feed/"]::before, #menu-social li a[href*="/feed/"]::before { content: "\f09e"; }
+.nav_social li a[href*="/feed/"]:hover, #menu-social li a[href*="/feed/"]:hover { background-color:#FF6600; }
+
+.nav_social li a[href*="wordpress.com"]::before, #menu-social li a[href*="wordpress.com"]::before { content: "\f19a"; }
+.nav_social li a[href*="wordpress.com"]:hover, #menu-social li a[href*="wordpress.com"]:hover { background-color:#21759b; }
+
+.nav_social li a[href*="wordpress.org"]::before, #menu-social li a[href*="wordpress.org"]::before { content: "\f19a"; }
+.nav_social li a[href*="wordpress.org"]:hover, #menu-social li a[href*="wordpress.org"]:hover { background-color:#21759b; }
+
+.nav_social li a[href*="tripadvisor.com"]::before, #menu-social li a[href*="tripadvisor.com"]::before { content: "\f262"; }
+.nav_social li a[href*="tripadvisor.com"]:hover, #menu-social li a[href*="tripadvisor.com"]:hover { background-color:#1d973c; }
+
+.nav_social li a[href*="yelp.com"]::before, #menu-social li a[href*="yelp.com"]::before { content: "\f1e9"; }
+.nav_social li a[href*="yelp.com"]:hover, #menu-social li a[href*="yelp.com"]:hover { background-color:#db000b; }
+
+.nav_social li a[href*="tel:"]::before, #menu-social li a[href*="tel:"]::before { content: "\f095"; }
+.nav_social li a[href*="tel:"]:hover, #menu-social li a[href*="tel:"]:hover { background-color:#0073e5; }
+
+.nav_social li a[href*="whatsapp:"]::before, #menu-social li a[href*="whatsapp:"]::before { content: "\f232"; }
+.nav_social li a[href*="whatsapp:"]:hover, #menu-social li a[href*="whatsapp:"]:hover { background-color:#00c547; }
+
+.nav_social li a[href*="vk.com"]::before, #menu-social li a[href*="vk.com"]::before { content: "\f189"; }
+.nav_social li a[href*="vk.com"]:hover, #menu-social li a[href*="vk.com"]:hover { background-color:#39739b; }
+
+.nav_social li a[href*="500px.com"]::before, #menu-social li a[href*="500px.com"]::before { content: "\f26e"; }
+.nav_social li a[href*="500px.com"]:hover, #menu-social li a[href*="500px.com"]:hover { background-color:#0098e7; }
+
+.nav_social li a[href*="snapchat.com"]::before, #menu-social li a[href*="napchat.com"]::before { content: "\f2ac"; }
+.nav_social li a[href*="snapchat.com"]:hover, #menu-social li a[href*="napchat.com"]:hover { background-color:#f4ed1d; }
+
+
+
+/*
+==========================================
+Footer Menu
+==========================================
+*/
+#menu-footer{
+	border-left: 1px solid rgba(0,0,0,.1);
+	display: inline-block;
+	margin-left: 20px;
+	padding-left: 8px;
+	li{
+		display: inline-block;
+		a{
+			padding: 8px 12px;
+			&:hover{
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+/*
+==========================================
+Payments Options
+==========================================
+*/
+.ql_payments_options ul{
+	padding-left: 0;
+	list-style: none;
+	margin: 20px 0;
+}
+.ql_payments_options ul li{
+	display: inline-block;
+	color: @gray-light2;
+	.font-size(28);
+	margin-left: 0.71428571428571em;
+	line-height: 1em;
+}
+.ql_payments_options ul li:hover, .ql_payments_options ul li i{
+	cursor: default;
+}

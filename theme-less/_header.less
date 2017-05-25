@@ -1,0 +1,514 @@
+
+/*
+==========================================
+Header
+==========================================
+*/
+#header{
+	position: relative;
+	z-index: 6;
+	.transition( padding 200ms);
+	padding: 2.5rem 0;
+	background-position: center;
+	background-size: cover;
+}
+#header .container{
+	position: relative;
+}
+
+
+.logo_container{
+	margin: 10px 0;
+}
+.logo_container .site-title{
+	margin: 0;
+	display: inline-block;
+	line-height: 1em;
+}
+
+.logo_container .ql_logo{
+	.font-size(24);
+	color: @heroColor;
+	font-weight: bold;
+	.transition( all 400ms ease-in-out);
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 11px 0;
+	font-family: @font-family-sans-serif;
+	position: relative;
+	z-index: 4;
+}
+.logo_container h1 .ql_logo{
+	padding: 4px 0;
+}
+.logo_container .custom-logo-link{
+	display: block;
+	position: relative;
+	z-index: 4;
+}
+
+.logo_container .ql_logo:hover{
+	text-decoration: none;
+}
+.logo_container .logo_desc{
+	font-family: @font-family-serif;
+	font-style: italic;
+	.font-size(14);
+	color: @gray-light2;
+	margin: 0;
+}
+.logo_container .logo_desc_wrap{
+	.transition( all 500ms ease);
+	display: inline-block;
+	margin-left: 15px;
+}
+
+#header:hover .logo_desc_wrap, #header:hover .ql_nav_btn{
+	opacity: 1;
+}
+.touch #header .logo_desc_wrap, .touch #header .ql_nav_btn, .blog #header .logo_desc_wrap, .blog #header .ql_nav_btn{
+	opacity: 1;
+}
+
+/*-----------------------------*/
+
+
+
+/*
+==========================================
+SVG Header
+==========================================
+*/
+.svg-square, .svg-triangle, .svg-circle{
+	position: absolute;
+	z-index: 0;
+}
+.ql_animations .svg-square, .ql_animations .svg-triangle, .ql_animations .svg-circle{
+	.transition(all 1700ms cubic-bezier(0.075, 0.82, 0.165, 1));
+	top: -40%;
+	.rotate(0);
+}
+.ql-svg-inline .g-svg{
+	stroke: @heroColor;
+
+}
+.place-triangle(12);
+
+.place-triangle(@n, @i: 0) when (@i =< @n) {
+  .pace-done #header .ql-svg:nth-child(@{i}) {
+    left: (@i * 8%);
+    .rotate( unit( ( @i * 17 ), deg) );
+  }
+  .pace-done #header .ql-svg:nth-child(even){
+  	top: (@i * 1%);
+  }
+  .pace-done #header .ql-svg:nth-child(odd){
+  	top: unit( (@i - 20), % );
+  }
+  .place-triangle(@n, (@i + 1));
+}
+
+
+
+
+
+
+
+
+/*
+==========================================
+Navigation Menu
+==========================================
+*/
+.navbar-toggle .icon-bar{
+	background-color: @gray;
+}
+//Mobile Nav Btn
+#ql_nav_btn{
+	position: absolute;
+	right: 20px;
+	top: 5px;
+	margin: 0;
+}
+
+#ql_main-navigation.in{
+	overflow: visible;
+}
+
+
+#header #ql_nav_collapse{
+	padding: 0;
+	display: block;
+	margin: 12px 0;
+	text-align: right;
+}
+#jqueryslidemenu{
+	margin: 0;
+	display: inline-block;
+	min-height: 0;
+	text-align: right;
+}
+
+#jqueryslidemenu ul.nav{
+}
+
+/*Top level list items*/
+#jqueryslidemenu  ul.nav > li{
+	margin-left: 0;
+	display: inline-block;
+	position: relative;
+}
+/*Top level menu link items style*/
+#jqueryslidemenu ul.nav > li > a{
+	text-decoration: none;
+	.font-size(15);
+	letter-spacing: 1px;
+    .transition( all 200ms ease-in-out);
+    color: @gray-light;
+    padding: 0.71428571428571em 1.07142857142857em;
+    background-color: transparent;
+}
+.glaciar_lite_nav_active{
+	.transition(~"opacity 400ms, transform 700ms cubic-bezier(0.075, 0.82, 0.165, 1)");
+	.translate( 0; 20px );
+	opacity: 0;
+}
+/* Main items hover ----------*/
+#jqueryslidemenu ul.nav > li{
+
+		& > a:hover{
+
+		}
+
+		.no-touch &:hover .glaciar_lite_nav_active{
+			.translate(0;0);
+			opacity: 1;
+		}
+}
+
+
+
+/* Active item ----------*/
+#jqueryslidemenu .current_page_item, #jqueryslidemenu .current_page_parent{
+
+		.glaciar_lite_nav_active{
+			opacity: 1;
+			.translate(0;0);
+		}
+}
+#jqueryslidemenu ul.nav > li > ul > li.current_page_item a, #jqueryslidemenu ul.nav > li > ul > li.current_page_parent a{
+	color: @heroColor;
+}
+#jqueryslidemenu .current_page_item > a:hover, #jqueryslidemenu .current_page_parent > a:hover{
+
+}
+
+
+
+/*1st sub level menu*/
+#jqueryslidemenu ul.nav > li > ul{
+	position: absolute;
+	top: 100%;
+	padding: 15px;
+	background-color: #fff;
+	border: none;
+	//.box-shadow(none);
+	.ql_shadow;
+}
+.dropdown.open .dropdown-menu {
+    display: none;
+}
+.no-touch .dropdown:hover > .dropdown-menu, .no-touch .dropdown.open:hover > .dropdown-menu, .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+}
+.dropdown.open > .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+}
+
+#jqueryslidemenu ul.nav > li > ul > li a{
+	.font-size(13);
+	padding: 10px 15px;
+	color: @gray-light;
+	.transition(all 100ms);
+	border-radius: 2px;
+}
+#jqueryslidemenu ul.nav > li > ul > li{
+	&.current-menu-item, &.current_page_item, &.current_page_parent{
+			a:hover{
+				color: #fff !important;		
+			}
+		
+	}
+}
+#jqueryslidemenu ul.nav > li > ul > li.menu-item-has-children > a{
+	white-space: normal;
+}
+#jqueryslidemenu ul.nav > li > ul > li a:hover{
+	background-color: @heroColor;
+	color: #fff;
+}
+#jqueryslidemenu .dropdown-menu > .active > a, .dropdown-menu > li > a:focus{
+	background-color: transparent;
+	outline: 0;
+}
+
+
+
+
+#jqueryslidemenu ul.nav > li > ul > li .dropdown-menu{
+	border: none;
+	//.box-shadow(none);
+	.ql_shadow;
+}
+
+
+#jqueryslidemenu ul.nav > li > ul > li > ul > li a{
+	.font-size(12);
+	display: block;
+	font-weight: normal;
+}
+
+
+#jqueryslidemenu ul.nav > li > ul > li.has-image{
+	padding: 5px;
+}
+
+#jqueryslidemenu ul.nav > li > ul .has-image a{
+	width: 220px;
+	border: none;
+	padding: 0;
+	cursor: inherit;
+	outline: 0!important;
+}
+#jqueryslidemenu ul.nav > li > ul .has-image img{
+	width: 100%;
+	height: auto;
+}
+
+
+
+
+
+/* Multi level dropdown -------*/
+.dropdown-menu .dropdown-menu{
+	background-color: #fff;
+	border: none;
+	//.box-shadow(none);
+	border-radius: 0 3px 3px 0;
+	.ql_shadow;
+}
+/*!
+ * Bootstrap-submenu v2.0.4 (https://vsn4ik.github.io/bootstrap-submenu/)
+ * Copyright 2014-2016 Vasily A. (https://github.com/vsn4ik)
+ * Licensed under the MIT license
+ */
+
+.dropdown-submenu > a:after {
+  content: "";
+}
+@media (min-width: 768px) {
+  .dropdown-submenu {
+    position: relative;
+  }
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    border-top-left-radius: 0;
+  }
+  .dropup .dropdown-submenu .dropdown-menu,
+  .navbar-fixed-bottom .dropdown-submenu .dropdown-menu {
+    top: auto;
+    bottom: 0;
+    margin-top: 0;
+    margin-bottom: -6px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 0;
+  }
+  .dropdown-menu-right .dropdown-submenu .dropdown-menu,
+  .navbar-right .dropdown-submenu .dropdown-menu {
+    left: auto;
+    right: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+  }
+  .dropup .dropdown-menu-right .dropdown-submenu .dropdown-menu,
+  .dropup .navbar-right .dropdown-submenu .dropdown-menu,
+  .navbar-fixed-bottom .dropdown-menu-right .dropdown-submenu .dropdown-menu,
+  .navbar-fixed-bottom .navbar-right .dropdown-submenu .dropdown-menu {
+    border-radius: 4px 4px 0;
+  }
+  .dropdown-submenu > a:after {
+    float: right;
+    margin-top: 6px;
+    margin-right: -10px;
+    border-left: 4px dashed;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+  .dropdown-menu-right .dropdown-submenu > a:after,
+  .navbar-right .dropdown-submenu > a:after {
+    float: left;
+    border-left: none;
+    margin-left: -10px;
+    margin-right: 0;
+    border-right: 4px dashed;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+  }
+}
+@media (max-width: 767px) {
+  .dropdown-submenu .dropdown-menu {
+    position: static;
+    margin-top: 0;
+    border: 0;
+    box-shadow: none;
+  }
+  .dropdown-submenu > a:after {
+    margin-left: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+  }
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li.dropdown-header,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li.dropdown-header,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li.dropdown-header,
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > a,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > a,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > a {
+    padding-left: 30px;
+  }
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > a,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > a,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > a {
+    padding-left: 40px;
+  }
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a {
+    padding-left: 50px;
+  }
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a,
+  .dropup > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a,
+  .btn-group > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a {
+    padding-left: 60px;
+  }
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li.dropdown-header,
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > a {
+    padding-left: 35px;
+  }
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > a {
+    padding-left: 45px;
+  }
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a {
+    padding-left: 55px;
+  }
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li.dropdown-header,
+  .navbar-nav > .dropdown > .dropdown-menu > .dropdown-submenu > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > .dropdown-menu > li > a {
+    padding-left: 65px;
+  }
+}
+/*# sourceMappingURL=bootstrap-submenu.css.map */
+
+
+
+
+
+
+/* Mobile Nav icon (Hamburguer) -----------*/
+#jqueryslidemenu .navbar-toggle .icon-bar{
+	background-color: @heroColor;
+}
+
+/* Dropdown arrow ------------*/
+.navbar .dropdown-toggle b{
+	color: @gray-light;
+	height: 6px;
+}
+
+
+
+
+
+
+
+/*
+Search Button
+---------------------------------------*/
+.menu_wrap .search-form{
+	color: #fff;
+
+	label{
+		margin-bottom: 0;
+	}
+	label::before{
+		color: #fff;
+		text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+	}
+
+	.search-field{
+		background-color: rgba(0, 0, 0, 0.2);
+		border: none;
+		margin-bottom: 0;
+		height: 39px;
+		border-radius: 0;
+		color: #fff;
+		.transition(all 300ms);
+		width: 0;
+		float: right;
+		padding: 0;
+	}
+	.search-field:focus{
+	    background-color: rgba(0, 0, 0, 0.3);
+	    .box-shadow(none);
+	    width: 100%;
+		padding: 6px 40px 6px 12px;
+	}
+	.search-field::-webkit-input-placeholder {
+	   color: #ACACAC;
+	}
+	.search-field:-moz-placeholder { /* Firefox 18- */
+	   color: #ACACAC;
+	}
+	.search-field::-moz-placeholder {  /* Firefox 19+ */
+	   color: #ACACAC;
+	}
+	.search-field:-ms-input-placeholder {
+	   color: #ACACAC;
+	}
+
+	.search-submit{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 39px;
+		height: 39px;
+		text-indent: -9999px;
+		overflow: hidden;
+		z-index: 2;
+		background-color: transparent;
+		border: none;
+		margin-bottom: 0;
+	}
+
+
+	&:hover .search-field{
+		width: 100%;
+		padding: 6px 40px 6px 12px;
+	}
+}

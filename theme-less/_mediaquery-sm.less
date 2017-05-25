@@ -1,0 +1,243 @@
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+
+	.container{
+		width: 98%;
+	}
+
+	/*
+	Header
+	==========================================
+	*/
+	#header{
+		padding: 1.25rem 0;
+	}
+	.logo_container, #jqueryslidemenu{
+		text-align: center;
+	}
+	#header .ql-svg:nth-child(10), #header .ql-svg:nth-child(11), #header .ql-svg:nth-child(12) {
+		display: none;
+	}
+	.place-triangle(12);
+
+	.place-triangle(@n, @i: 0) when (@i =< @n) {
+	  .pace-done #header .ql-svg:nth-child(@{i}) {
+	    left: (@i * 10%);
+	  }
+	  .place-triangle(@n, (@i + 1));
+	}
+	#header #ql_nav_collapse{
+		text-align: center;
+	}
+
+	/*
+	Portfolio
+	==========================================
+	*/
+	.portfolio-container{
+
+			.portfolio-item{
+				width: 30.7%;
+				padding-bottom: 20.5%;
+	    		margin: 1.27%;
+
+	    		&.landscape-big{
+	    			width: 63.9%;
+	    			padding-bottom: 43.4%;
+	    		}
+
+	    		&.layout-portrait{
+	    			width: 30.7%;
+	    			padding-bottom: 43.4%;
+	    		}
+
+			}/* portfolio-item */
+	}
+
+	/*
+	Portfolio Thirds
+	============================= */
+	.portfolio-thirds{
+
+			.portfolio-item{
+				width: 31%;
+				height: auto;
+	    		margin: 1%;
+	    		padding-bottom: 0;
+
+			}/* portfolio-item */
+
+	}
+
+	/*
+	Portfolio Slider
+	============================= */
+	.portfolio-slider{
+		padding-top: 50px;
+
+			.portfolio-item{
+				width: auto;
+				height: 45vh;
+				margin: 3% 1% 70px;
+				padding-bottom: 0;
+
+					a{
+
+							img{
+								height: 45vh;
+								width: auto;
+								max-width: none;
+							}
+					}
+			}
+	}
+
+	/*
+	Portfolio Multiple Sliders
+	============================= */
+	.portfolio-multiple-slider .portfolio-item{
+		margin-bottom: 7%;
+		margin-top: 2%;
+	}
+
+	.single-portfolio.portfolio_layout_horizontal{
+			.post-navigation {
+			    width: 100%;
+			}
+	}
+	.single-portfolio.portfolio_layout_vertical #content{
+		padding-right: 20px;
+	}
+
+
+	/*
+	Content
+	==========================================
+	*/
+	.metadata ul li{
+		float: left;
+	}
+
+	/*Post										*/
+	/*------------------------------------------*/
+	.blog #content.col-md-12 .post{
+		width: 45%;
+	}
+	.blog #content.col-md-8 .post{
+		width: 45%;
+		margin: 0 4% 4% 0;
+
+	}
+
+
+
+	/*
+	Sidebar
+	==========================================
+	*/
+	#sidebar{
+		padding-left: 20px;
+	}
+	
+
+	/*
+	Single
+	============================= */
+	.single .post .entry-footer{
+		text-align: left;
+	}
+	.single .post .entry-footer .metadata ul li{
+		display: inline-block;
+		margin-right: 15px;
+	}
+	.single .post .entry-footer .metadata ul li.meta_date{
+		display: block;
+	}
+
+
+
+
+	/*Comments Form---------------------------------------------------*/
+	#respond .input-wrap{
+		width:46%;
+	}
+	#content.col-md-12 #comments{
+		width: 100%;
+	}
+
+	input, textarea{
+		@box_shadow: 0 2px 4px rgba(0,0,0,0.08), 0 3px 15px rgba(0,0,0,0.13);
+		.box-shadow(@box_shadow);
+		border: 1px solid @gray-lighter;
+	}
+
+	/*
+	==========================================
+	Footer Top
+	==========================================
+	*/
+	.footer-top{
+			ul{
+				height: 17px;
+					li{
+						border-width: 0 43px 17px 43px;
+
+					}
+			}
+	}
+
+
+	/*----------- Work Button Widget -----------------*/
+	.widget_glaciar_lite_work_button{
+
+		display: block;
+
+			.widget_glaciar_lite_work_title{
+				width: 100%;
+				margin-right: 0;
+			}
+			.ql_primary_btn{
+				margin-top: 7%;
+			}
+	}
+
+
+	/*
+	Contact Page
+	==========================================
+	*/
+
+	.glaciar-contact-image, #map-section #map{
+		width: 100%;
+	}
+	.glaciar-contact-form{
+		.translate(0;0) !important;
+		width: 100%;
+		margin-bottom: 0;
+	}
+
+	/*
+	About Individual
+	==========================================
+	*/
+	.about_individual_text .vc_column-inner{
+		margin-left: 0 !important;
+		width: auto;
+	}
+
+	/*
+	Cart
+	==========================================
+	*/
+	.woocommerce-cart .cart .cart_item{
+		width: 31%;
+	}
+	.woocommerce-cart #content form{
+		width: 100%;
+		display: block;
+	}
+	.woocommerce-cart #content .cart-collaterals{
+		width: 100%;
+		display: block;
+		margin-left: 0;
+	}
+}

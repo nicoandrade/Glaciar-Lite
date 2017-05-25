@@ -1,0 +1,505 @@
+/*
+Home Page
+============================= */
+.ql_animations .welcome-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;-40px);
+}
+.pace-done.ql_animations .welcome-title{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations.page-template-template-home .ql_filter{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(0;60px);
+}
+.pace-done.ql_animations.page-template-template-home .ql_filter{
+    opacity: 1;
+    .translate(0;0);
+}
+
+/*
+Page Title
+============================= */
+.ql_animations .entry-header .page-title, .ql_animations .entry-header .post-title, .ql_animations .page-header .page-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(40px;0);
+}
+.pace-done.ql_animations .entry-header .page-title, .pace-done.ql_animations .entry-header .post-title, .pace-done.ql_animations .page-header .page-title{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations .entry-header .svg-title, .ql_animations .page-header .svg-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(-110%;0);
+}
+.pace-done.ql_animations .entry-header .svg-title, .pace-done.ql_animations .page-header .svg-title{
+    opacity: 1;
+    .translate(-102%;0);
+}
+
+
+/*
+Entry Content
+============================= */
+.ql_animations #content .post-content{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(0;20px);
+}
+.pace-done.ql_animations #content .post-content{
+    opacity: 1;
+    .translate(0;0);
+}
+//Post image
+.ql_animations #content .post-image{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;20px);
+}
+.pace-done.ql_animations #content .post-image{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.delay-blog-posts(10);
+
+.delay-blog-posts(@n, @i: 0) when (@i =< @n) {
+    .ql_animations #content .post:nth-child(@{i}) .post-image{
+        .transition-delay( unit( ( ( @i * 70 ) + 600 ), ms ) );
+    }
+    .blog.ql_animations #content .post:nth-child(@{i}) .post-content{
+        .transition-delay( unit( ( ( @i * 90 ) + 800 ), ms ) );
+    }
+  .delay-blog-posts(@n, (@i + 1));
+}
+
+
+
+/*
+Pagination
+============================= */
+.ql_animations .pagination{
+    opacity: 0;
+    .transition( all 900ms cubic-bezier(0.075, 0.82, 0.165, 1)  );
+    .transition-delay(800ms);
+    .translate(0;30px);
+}
+.pace-done.ql_animations .pagination{
+    opacity: 1;
+    .translate(0;0);
+}
+
+
+/*
+Single Metadata
+============================= */
+.ql_animations.single .metadata, .ql_animations.single .glaciar-horizontal{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(-30px;0);
+}
+.ql_animations.single .glaciar-horizontal{
+    .transition-delay(700ms);
+}
+.pace-done.ql_animations.single .metadata, .pace-done.ql_animations.single .glaciar-horizontal{
+    opacity: 1;
+    .translate(0;0);
+}
+
+/*
+Sidebar
+============================= */
+.ql_animations #sidebar .widget{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(40px;0);
+}
+.delay-sidebar-widgets(10);
+
+.delay-sidebar-widgets(@n, @i: 0) when (@i =< @n) {
+    .ql_animations #sidebar .widget:nth-child(@{i}){
+        .transition-delay( unit( ( ( @i * 50 ) + 600 ), ms ) );
+    }
+  .delay-sidebar-widgets(@n, (@i + 1));
+}
+.pace-done.ql_animations #sidebar .widget{
+    opacity: 1;
+    .translate(0;0);
+}
+
+/*
+Home Fullscreen Slider
+============================= */
+.ql_animations .slider-fullscreen-controls{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(200ms);
+    .translate(-40px;0);
+}
+.pace-done.ql_animations .slider-fullscreen-controls{
+    opacity: 1;
+    .translate(0;0);
+}
+.ql_animations .slider-fullscreen-controls .slider-fullscreen-title span{
+    opacity: 0;
+    .transition(all 700ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(350ms);
+    .translate(0;-30px);
+}
+.pace-done.ql_animations .slider-fullscreen-controls .slider-fullscreen-title span{
+    opacity: 1;
+    .translate(0;0);
+}
+
+
+/*
+Home Slider
+============================= */
+.ql_animations .glaciar-home-slider .slide img{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(200ms);
+    .translate(50px;0);
+}
+.pace-done.ql_animations .glaciar-home-slider .slide img{
+    opacity: 1;
+    .translate(0;0);
+}
+.ql_animations .glaciar-home-slider .slide-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;-40px);
+}
+.pace-done.ql_animations .glaciar-home-slider .slide-title{
+    opacity: 1;
+    .translate(0;0);
+}
+.ql_animations .glaciar-home-slider .flickity-prev-next-button, .ql_animations .glaciar-home-slider .flickity-page-dots{
+    opacity: 0;
+    .transition(opacity 500ms);
+    .transition-delay(600ms);
+}
+.pace-done.ql_animations .glaciar-home-slider .flickity-prev-next-button, .pace-done.ql_animations .glaciar-home-slider .flickity-page-dots{
+    opacity: 1;
+}
+
+
+/*
+Portfolio
+============================= */
+.ql_animations.ql_portfolio_animations .portfolio-container .portfolio-item, .ql_animations.ql_portfolio_animations .single-portfolio-container .portfolio-item{
+    opacity: 0;
+    .transition(~"opacity 900ms, transform 900ms cubic-bezier(0.075, 0.82, 0.165, 1), -webkit-transform 900ms cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow 300ms");
+    .transition-delay(600ms);
+    .translate(0;40px);
+}
+//Single portfolio vertical
+.ql_animations.ql_portfolio_animations .single-portfolio-container .portfolio-item{
+    .transition-delay(800ms);
+}
+.delay-portfolio-items(25);
+
+.delay-portfolio-items(@n, @i: 0) when (@i =< @n) {
+    .ql_animations.ql_portfolio_animations .portfolio-container .portfolio-item:nth-child(@{i}), .ql_animations.ql_portfolio_animations .single-portfolio-container .portfolio-item:nth-child(@{i}){
+        .transition-delay( unit( ( ( @i * 50 ) + 600 ), ms ) );
+    }
+    //Single portfolio vertical
+    .ql_animations.ql_portfolio_animations .single-portfolio-container .portfolio-item:nth-child(@{i}){
+        .transition-delay( unit( ( ( @i * 50 ) + 800 ), ms ) );
+    }
+  .delay-portfolio-items(@n, (@i + 1));
+}
+.pace-done.ql_animations.ql_portfolio_animations .portfolio-container .portfolio-item, .pace-done.ql_animations .single-portfolio-container .portfolio-item{
+    opacity: 1;
+    .translate(0;0);
+    .transition-delay(0);
+}
+//Flickity controls
+.ql_animations .portfolio-container .flickity-page-dots, .ql_animations .portfolio-container .portfolio-slider-controls{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(1000ms);
+    .translate(20px;0);
+}
+.pace-done.ql_animations .portfolio-container .flickity-page-dots, .pace-done.ql_animations .portfolio-container .portfolio-slider-controls{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations .post-navigation .nav-previous, .ql_animations .post-navigation .nav-next{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(-20px;0);
+}
+.ql_animations .post-navigation .nav-next{
+    .translate(20px;0);
+}
+.pace-done.ql_animations .post-navigation .nav-previous, .pace-done.ql_animations .post-navigation .nav-next{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations.portfolio_layout_horizontal .entry-content{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(0;30px);
+}
+.pace-done.ql_animations.portfolio_layout_horizontal .entry-content{
+    opacity: 1;
+    .translate(0;0);
+}
+
+/*
+Portfolio Multiple Slider
+============================= */
+.ql_animations .portfolio-multiple-slider .portfolio-title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;-30px);
+}
+.pace-done.ql_animations .portfolio-multiple-slider .portfolio-title{
+    opacity: 1;
+    .translate(0;0);
+}
+
+/*
+Shop
+============================= */
+.ql_animations .ql_woocommerce_categories{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(30px;0);
+}
+.pace-done.ql_animations .ql_woocommerce_categories{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations .woocommerce-breadcrumb, .ql_animations .woocommerce-result-count{
+    opacity: 0;
+    .transition(opacity 400ms);
+    .transition-delay(700ms);
+}
+.pace-done.ql_animations .woocommerce-breadcrumb, .pace-done.ql_animations .woocommerce-result-count{
+    opacity: 1;
+}
+
+.ql_animations.woocommerce #main .products .product{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(0;40px);
+}
+.pace-done.ql_animations.woocommerce #main .products .product{
+    opacity: 1;
+    .translate(0;0);
+}
+.delay-product-items(25);
+
+.delay-product-items(@n, @i: 0) when (@i =< @n) {
+    .ql_animations.woocommerce #main .products .product:nth-child(@{i}){
+        .transition-delay( unit( ( ( @i * 50 ) + 800 ), ms ) );
+    }
+  .delay-product-items(@n, (@i + 1));
+}
+
+
+/*
+Product Single
+============================= */
+.ql_animations #content div.product div.images{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations #content div.product div.images{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations div.product .product_title{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(40px;0);
+}
+.pace-done.ql_animations div.product .product_title{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations #main .product .entry-summary .price{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(700ms);
+    .translate(30px;0);
+}
+.pace-done.ql_animations #main .product .entry-summary .price{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations #main .product .entry-summary .woocommerce-product-details__short-description{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(30px;0);
+}
+.pace-done.ql_animations #main .product .entry-summary .woocommerce-product-details__short-description{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations #main .product .entry-summary .woocommerce-product-rating{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+}
+.pace-done.ql_animations #main .product .entry-summary .woocommerce-product-rating{
+    opacity: 1;
+}
+
+.ql_animations div.product form.cart{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(900ms);
+    .translate(30px;0);
+}
+.pace-done.ql_animations div.product form.cart{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations div.product .woocommerce-tabs{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(900ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations div.product .woocommerce-tabs{
+    opacity: 1;
+    .translate(0;0);
+}
+
+
+/*
+Cart
+============================= */
+.ql_animations.woocommerce-cart .cart{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations.woocommerce-cart .cart{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations.woocommerce-cart .cart .cart_item{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations.woocommerce-cart .cart .cart_item{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.delay-cart-items(20);
+
+.delay-cart-items(@n, @i: 0) when (@i =< @n) {
+    .ql_animations.woocommerce-cart .cart .cart_item:nth-child(@{i}){
+        .transition-delay( unit( ( ( @i * 50 ) + 600 ), ms ) );
+    }
+  .delay-cart-items(@n, (@i + 1));
+}
+
+.ql_animations.woocommerce-cart .cart-collaterals{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(50px;0);
+}
+.pace-done.ql_animations.woocommerce-cart .cart-collaterals{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations.woocommerce-cart .actions{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(1000ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations.woocommerce-cart .actions{
+    opacity: 1;
+    .translate(0;0);
+}
+
+
+/*
+Contact Page
+============================= */
+.ql_animations .glaciar-contact-image{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(400ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations .glaciar-contact-image{
+    opacity: 1;
+    .translate(0;0);
+}
+
+.ql_animations .glaciar-contact-form{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(600ms);
+    .translate(66%;-27%);
+
+        &.no-image{
+            .translate(66%;-3%);
+        }
+}
+.pace-done.ql_animations .glaciar-contact-form{
+    opacity: 1;
+    .translate(66%;-25%);
+        
+        &.no-image{
+            .translate(66%;0);
+        }
+}
+
+.ql_animations #map-section{
+    opacity: 0;
+    .transition(all 900ms cubic-bezier(0.075, 0.82, 0.165, 1));
+    .transition-delay(800ms);
+    .translate(0;50px);
+}
+.pace-done.ql_animations #map-section{
+    opacity: 1;
+    .translate(0;0);
+}
