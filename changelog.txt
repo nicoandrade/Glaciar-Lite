@@ -1,6 +1,21 @@
 * 1.0.3 - 06/06/2017
 ====================
 - Added: Missing prefixes
+- Added: subject tags in style.css
+- Added: Use of core imagesloaded script
+- Added: custom-header and custom-logo tags
+- Added: widget_title filter on all widgets
+- Added: Links to Images from the Screenshot
+- Added: Font and Code license from FontAwesome
+- Added: Missing singular placeholder on comments section
+- Improved: Third party scripts are not prefixed
+- Improved: escaping data
+- Improved: Sanitization
+- Removed: Closure/anonymous function
+- Removed: comment-form from add_theme_support()
+- Removed: Google Maps feature
+- Removed: sticky-post tag
+- Removed: Use of HEADER_TEXTCOLOR constant
 
 
 * 1.0.2 - 26/05/2017
