@@ -22,14 +22,14 @@ if ( ! is_wp_error( $term_list ) ) {
 		$terms_to_print .= ' ' . $term_slug;
 	}
 }
-echo "\t\t\t<div id='portfolio-item-" . $post->ID . "' class='portfolio-item " . esc_attr( $terms_to_print ) . $image_print;
+echo "\t\t\t<div id='portfolio-item-" . esc_attr( $post->ID ) . "' class='portfolio-item " . esc_attr( $terms_to_print ) . $image_print;
     echo "\t\t\t\t<a href='" . esc_url( get_permalink() ) . "'></a>\n";
 	echo '<div class="portfolio-item-hover">';
-        echo '<h4 class="portfolio-item-title">' . esc_html( get_the_title() ) . '<img class="horizontal-lines" alt="lines" src="' . get_template_directory_uri() . '/images/horizontal.svg"></h4>';
+        echo '<h4 class="portfolio-item-title">' . esc_html( get_the_title() ) . '<img class="horizontal-lines" alt="lines" src="' . esc_url( get_template_directory_uri() ) . '/images/horizontal.svg"></h4>';
         if ( ! is_wp_error( $term_list ) ) {
 		    echo '<ul class="portfolio-item-categories">';
 				foreach ( $term_list as $term_slug ) {
-					echo '<li>' . $term_slug . '</li>';
+					echo '<li>' . esc_html( $term_slug ) . '</li>';
 				}
 			echo "</ul>\n";
 		}

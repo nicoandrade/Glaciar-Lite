@@ -21,11 +21,9 @@ function glaciar_lite_setup() {
 	 * Defines Constant
 	 */
 	$glaciar_lite_theme_data = wp_get_theme();
-	define( 'QL_STORE_URL', 'https://www.quemalabs.com/' );
-	define( 'QL_THEME_NAME', $glaciar_lite_theme_data['Name'] );
-	define( 'QL_THEME_VERSION', $glaciar_lite_theme_data['Version'] );
-	define( 'QL_THEME_SLUG', sanitize_title( $glaciar_lite_theme_data['Name'] ) );
-	define( 'QL_THEME_AUTHOR', $glaciar_lite_theme_data['Author'] );
+	define( 'GLACIAR_LITE_THEME_NAME', $glaciar_lite_theme_data['Name'] );
+	define( 'GLACIAR_LITE_THEME_VERSION', $glaciar_lite_theme_data['Version'] );
+	define( 'GLACIAR_LITE_THEME_SLUG', sanitize_title( $glaciar_lite_theme_data['Name'] ) );
 
 	/*
 	 * Make theme available for translation.
@@ -77,7 +75,6 @@ function glaciar_lite_setup() {
 	 */
 	add_theme_support( 'html5', array(
 		'search-form',
-		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',

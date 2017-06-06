@@ -37,36 +37,36 @@
         $glaciar_lite_site_header_shapes = get_theme_mod( 'glaciar_lite_site_header_shapes', true );
         if( $glaciar_lite_site_header_shapes ){
         ?>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/square.svg" alt="" class="ql-svg svg-square">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/square.svg" alt="" class="ql-svg svg-square">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/square.svg" alt="" class="ql-svg svg-square">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/square.svg" alt="" class="ql-svg svg-square">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
         <svg class="ql-svg ql-svg-inline svg-circle" width="34px" height="34px" viewBox="0 0 34 34" >
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.746268657"><g class="g-svg" transform="translate(-547.000000, -7.000000)" stroke-width="4" stroke="#F2F2F2"><g transform="translate(59.000000, -11.000000)"><circle cx="505" cy="35" r="15"></circle></g></g></g>
         </svg>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/square.svg" alt="" class="ql-svg svg-square">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/circle.svg" alt="" class="ql-svg svg-circle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/triangle.svg" alt="" class="ql-svg svg-triangle">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/square.svg" alt="" class="ql-svg svg-square">
         <?php } ?>
 		<div class="container">
         	<div class="row">
 
                 <div class="logo_container col-md-5 col-sm-12 col-xs-12">
                     <?php
-                    $logo = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home" class="ql_logo">' . get_bloginfo( 'name' ) . '</a>';
+                    $logo = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home" class="ql_logo">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
                     if ( has_custom_logo() ) {
                         $logo = get_custom_logo();
                     }
                     ?>
                     <?php if ( is_front_page() ) : ?>
-                        <h1 class="site-title"><?php echo $logo; ?>&nbsp;</h1>
+                        <h1 class="site-title"><?php echo wp_kses_post( $logo ); ?>&nbsp;</h1>
                     <?php else : ?>
-                        <p class="site-title"><?php echo $logo; ?></p>
+                        <p class="site-title"><?php echo wp_kses_post( $logo ); ?></p>
                     <?php endif; ?>
 
                     <button id="ql_nav_btn" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#ql_nav_collapse" aria-expanded="false">

@@ -17,20 +17,20 @@ function quemalabs_getting_started_page() {
 		<div class="header-wrap">
 			<div class="theme-image">
 				<span class="top-browser"><i></i><i></i><i></i></span>
-				<img src="<?php echo get_template_directory_uri() . '/screenshot.png'; ?>" alt="">
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/screenshot.png'; ?>" alt="">
 			</div>
 			<div class="theme-content">
 				<div class="theme-content-wrap">
 				<h4><?php esc_html_e( 'Getting Started', 'glaciar-lite' ); ?></h4>
-				<h2 class="theme-name"><?php echo esc_html( QL_THEME_NAME ); ?> <span class="ver"><?php echo 'v' . esc_html( QL_THEME_VERSION ); ?></span></h2>
-				<p><?php echo sprintf( esc_html__( 'Thanks for using %s, we appriciate that you create with our products.', 'glaciar-lite' ), esc_html( QL_THEME_NAME ) ); ?></p>
+				<h2 class="theme-name"><?php echo esc_html( GLACIAR_LITE_THEME_NAME ); ?> <span class="ver"><?php echo 'v' . esc_html( GLACIAR_LITE_THEME_VERSION ); ?></span></h2>
+				<p><?php echo sprintf( esc_html__( 'Thanks for using %s, we appriciate that you create with our products.', 'glaciar-lite' ), esc_html( GLACIAR_LITE_THEME_NAME ) ); ?></p>
 				<p><?php esc_html_e( 'Check the content below to get started with our theme.', 'glaciar-lite' ); ?></p>
 				</div>
 
 				<ul class="getting-started-menu">
 					<?php
-					if ( isset ( $_GET['tab'] ) ){
-						$tab = $_GET['tab'];
+					if ( isset( $_GET['tab'] ) ){
+						$tab = sanitize_text_field( wp_unslash( $_GET['tab'] ) );
 					}else{
 						$tab = 'docs';
 					}
@@ -42,7 +42,7 @@ function quemalabs_getting_started_page() {
 
 			</div><!-- .theme-content -->
 		</div>
-		<a href="https://www.quemalabs.com/" class="ql_logo" target="_blank"><img  src="<?php echo get_template_directory_uri() . '/images/quemalabs.png'; ?>" alt="Quema Labs" /></a>
+		<a href="https://www.quemalabs.com/" class="ql_logo" target="_blank"><img  src="<?php echo esc_url( get_template_directory_uri() ) . '/images/quemalabs.png'; ?>" alt="Quema Labs" /></a>
 	</div><!-- .getting-started-header -->
 
 	<div class="getting-started-content">
@@ -51,9 +51,9 @@ function quemalabs_getting_started_page() {
 	global $pagenow;
 	global $updater;
 	
-	if ( $pagenow == 'themes.php' && $_GET['page'] == 'glaciar_lite_theme-info' ){
-		if ( isset ( $_GET['tab'] ) ){
-			$tab = $_GET['tab'];
+	if ( $pagenow == 'themes.php' && isset( $_GET['page'] ) && 'glaciar_lite_theme-info' == $_GET['page'] ){
+		if ( isset( $_GET['tab'] ) ){
+			$tab = sanitize_text_field( wp_unslash( $_GET['tab'] ) );
 		}else{
 			$tab = 'docs';
 		}
@@ -64,7 +64,7 @@ function quemalabs_getting_started_page() {
 
 			<div class="theme-docuementation">
 				<div class="help-msg-wrap">
-					<div class="help-msg"><?php echo sprintf( esc_html__( 'You can find this documentation and more at our %sHelp Center%s.', 'glaciar-lite' ), '<a href="https://quemalabs.ticksy.com/articles/100007406/" target="_blank">', '</a>' ); ?></div>
+					<div class="help-msg"><?php echo sprintf( esc_html__( 'You can find this documentation and more at our %1$sHelp Center%2$s.', 'glaciar-lite' ), '<a href="https://quemalabs.ticksy.com/articles/100007406/" target="_blank">', '</a>' ); ?></div>
 				</div>
 
 			</div><!-- .theme-docuementation -->

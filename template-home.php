@@ -27,7 +27,8 @@ get_header(); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php
-			if ( ! empty( get_the_content() ) ) {
+			$glaciar_lite_page_content = get_the_content();
+			if ( ! empty( $glaciar_lite_page_content ) ) {
 			?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				

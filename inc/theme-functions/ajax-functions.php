@@ -4,14 +4,17 @@
  */
 function glaciar_lite_load_items(){
 
-	if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )) {
+	if( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty( $_POST['action'] )) {
 
-		$token = $_POST['token'];
 		//Comprabar que tenga un token correcto para evitar abuso
-		if( wp_verify_nonce( $token, 'quemalabs-secret' ) ){
+		if( isset( $_POST['token'] ) && wp_verify_nonce( sanitize_key( $_POST['token'] ), 'quemalabs-secret' ) ){
 
-			$category = esc_attr( $_POST['category'] );
-			$offset = intval( esc_attr( $_POST['offset'] ) );
+			if ( isset( $_POST['category'] ) ) {
+			    $category = sanitize_text_field( wp_unslash( $_POST['category'] ) );
+			}
+			if ( isset( $_POST['offset'] ) ) {
+			    $offset = intval( wp_unslash( $_POST['offset'] ) );
+			}
 			$product_amout = get_theme_mod( 'glaciar_lite_shop_products_amount', '12' );
 			$args = array(
 				'posts_per_page' => $product_amout,
@@ -70,16 +73,21 @@ add_action( 'wp_ajax_glaciar_lite_load_items', 'glaciar_lite_load_items' );
  */
 function glaciar_lite_load_portfolio_items(){
 
-	if( 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty( $_POST['action'] )) {
+	if( isset( $_SERVER['REQUEST_METHOD'] ) && 'POST' == $_SERVER['REQUEST_METHOD'] && ! empty( $_POST['action'] )) {
 
-		$token = $_POST['token'];
 		//Comprabar que tenga un token correcto para evitar abuso
-		if( wp_verify_nonce( $token, 'quemalabs-secret' ) ){
+		if( isset( $_POST['token'] ) && wp_verify_nonce( sanitize_key( $_POST['token'] ), 'quemalabs-secret' ) ){
 
+			if ( isset( $_POST['category'] ) ) {
+			    $category = sanitize_text_field( wp_unslash( $_POST['category'] ) );
+			}
+			if ( isset( $_POST['post_type'] ) ) {
+			    $post_type = sanitize_text_field( wp_unslash( $_POST['post_type'] ) );
+			}
+			if ( isset( $_POST['offset'] ) ) {
+			    $offset = intval( wp_unslash( $_POST['offset'] ) );
+			}
 
-			$category = esc_attr( $_POST['category'] );
-			$post_type = esc_attr( $_POST['post_type'] );
-			$offset = intval( esc_attr( $_POST['offset'] ) );
 			$product_amout = get_theme_mod( 'glaciar_lite_portfolio_items_amount', 12 );
 			$args = array(
 				'posts_per_page' => $product_amout,

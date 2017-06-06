@@ -26,7 +26,8 @@ get_header(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<?php
-				if ( ! empty( get_the_content() ) ) {
+				$glaciar_lite_page_content = get_the_content();
+				if ( ! empty( $glaciar_lite_page_content ) ) {
 				?>
 					<div class="entry-content">
 						<?php the_content(); ?>

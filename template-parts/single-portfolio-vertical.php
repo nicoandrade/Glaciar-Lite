@@ -64,7 +64,7 @@
     	}
     }
 
-    echo "\t\t\t<div id='portfolio-item-" . $post->ID . "' class='portfolio-item " . $item_class . "'>";
+    echo "\t\t\t<div id='portfolio-item-" . esc_attr( $post->ID ) . "' class='portfolio-item " . esc_attr( $item_class ) . "'>";
         echo "\t\t\t\t<a href='" . esc_url( $portfolio_image[0] ) . "' data-width='" . esc_attr( $portfolio_image[1] ) . "' data-height='" . esc_attr( $portfolio_image[2] ) . "'>\n";
             the_post_thumbnail( 'glaciar_lite_portfolio_2x' );
         echo "</a>\n";

@@ -125,7 +125,7 @@ $glaciar_lite_portfolio_item_single_layout = ( empty( $glaciar_lite_portfolio_it
                 <div class="col-md-8 col-sm-8">
 
                     <p>
-                    <?php esc_html_e( '&copy;', 'glaciar-lite' ); echo ' ' . date_i18n( esc_html__( 'Y', 'glaciar-lite' ) ) . ' ' . get_bloginfo( 'name' );  ?>.
+                    <?php esc_html_e( '&copy;', 'glaciar-lite' ); echo ' ' . esc_html( date_i18n( __( 'Y', 'glaciar-lite' ) ) ). ' ' . esc_html( get_bloginfo( 'name' ) );  ?>.
                     <?php printf( esc_html__( 'Designed by %s.', 'glaciar-lite' ), '<a href="https://www.quemalabs.com/" rel="designer">Quema Labs</a>' ); ?>
                         
                     </p>

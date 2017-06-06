@@ -17,7 +17,7 @@
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-			<p><?php printf( esc_html__( 'Ready to publish your first post? %s Get started here %s.', 'glaciar-lite' ), '<a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">', '</a>' ); ?></p>
+			<p><?php printf( esc_html__( 'Ready to publish your first post? %1$s Get started here %2$s.', 'glaciar-lite' ), '<a href="' . esc_url( admin_url( 'post-new.php' ) ) . '">', '</a>' ); ?></p>
 
 		<?php elseif ( is_search() ) : ?>
 

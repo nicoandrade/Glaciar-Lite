@@ -28,8 +28,10 @@ class glaciar_lite_Portfolio extends WP_Widget{
     public function widget( $args, $instance ){
 
         echo $args['before_widget'];
+
+        $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
         ?>
-            <h4><?php if( ! empty( $instance['title'] ) ): echo apply_filters( 'widget_title', $instance['title'] ); endif; ?></h4>
+            <?php if( ! empty( $title ) ): echo $args['before_title'] . $title . $args['after_title']; endif; ?>
             <?php
             echo '<div class="widget-portfolio-wrap">';
 

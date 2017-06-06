@@ -38,9 +38,10 @@ Underscores
 (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 Source: http://underscores.me/
 
-Font Awesome icon font, Created by Dave Gandy
-Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
-Source: http://fortawesome.github.io/
+Font Awesome, Created by Dave Gandy
+Code License: MIT License | http://opensource.org/licenses/mit-license.html
+Font License: SIL OFL 1.1 | http://scripts.sil.org/OFL
+Source: http://fontawesome.io
 
 Bootstrap Created by @mdo and @fat.
 Code licensed under MIT
@@ -87,4 +88,7 @@ Source: https://github.com/afarkas/html5shiv
 
 Images from Unsplash
 License: https://unsplash.com/license
-Source: https://unsplash.com
+https://unsplash.com/photos/xcC5ozHk_N8
+https://unsplash.com/search/seal?photo=EDqP5r_QwrE
+https://unsplash.com/search/skyscraper?photo=RaVwyM3XK7Y
+https://stocksnap.io/photo/IN5857C7SL

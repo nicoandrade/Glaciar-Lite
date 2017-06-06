@@ -17,8 +17,7 @@ function glaciar_lite_customize_register( $wp_customize ) {
 	 * Control for the PRO buttons
 	 */
 	class glaciar_lite_Pro_Version extends WP_Customize_Control{
-		public function render_content()
-		{
+		public function render_content(){
 			$args = array(
 				'a' => array(
 					'href' => array(),
@@ -111,7 +110,7 @@ function glaciar_lite_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'glaciar_lite_portfolio_items_amount_info', array( 'default' => '', 'sanitize_callback' => 'glaciar_lite_sanitize_text', ) );
 		$wp_customize->add_control( new glaciar_lite_Display_Text_Control( $wp_customize, 'glaciar_lite_portfolio_items_amount_info', array(
 			'section' => 'glaciar_lite_portfolio_options_section', // Required, core or custom.
-			'label' => sprintf( esc_html__( 'Please install %s Kirki Toolkit %s plugin to see more settings.', 'glaciar-lite' ), '<a href="' . get_admin_url( null, 'themes.php?page=tgmpa-install-plugins' ) .'">', '</a>' ),
+			'label' => sprintf( esc_html__( 'Please install %1$s Kirki Toolkit %2$s plugin to see more settings.', 'glaciar-lite' ), '<a href="' . get_admin_url( null, 'themes.php?page=tgmpa-install-plugins' ) .'">', '</a>' ),
 		) ) );
 
 	}
@@ -207,7 +206,7 @@ function glaciar_lite_customize_register( $wp_customize ) {
 		    'type'        => 'multicheck',
 		    'settings'    => 'glaciar_lite_typography_subsets',
 		    'label'       => esc_html__( 'Google-Font subsets', 'glaciar-lite' ),
-		    'description' => esc_html__( 'The subsets used from Google\'s API.', 'glaciar-lite' ),
+		    'description' => esc_html__( "The subsets used from Google's API.", 'glaciar-lite' ),
 		    'section'     => 'glaciar_lite_typography_section',
 		    'default'     => '',
 		    'priority'    => 23,
@@ -249,12 +248,15 @@ function glaciar_lite_customize_register( $wp_customize ) {
 		        ),
 		    ),
 		) );
+
 	}else{
+
 		$wp_customize->add_setting( 'glaciar_lite_typography_not_kirki', array( 'default' => '', 'sanitize_callback' => 'glaciar_lite_sanitize_text', ) );
 		$wp_customize->add_control( new glaciar_lite_Display_Text_Control( $wp_customize, 'glaciar_lite_typography_not_kirki', array(
 			'section' => 'glaciar_lite_typography_section', // Required, core or custom.
-			'label' => sprintf( esc_html__( 'To change typography make sure you have installed the %s Kirki Toolkit %s plugin.', 'glaciar-lite' ), '<a href="' . get_admin_url( null, 'themes.php?page=tgmpa-install-plugins' ) . '">', '</a>' ),
+			'label' => sprintf( esc_html__( 'To change typography make sure you have installed the %1$s Kirki Toolkit %2$s plugin.', 'glaciar-lite' ), '<a href="' . get_admin_url( null, 'themes.php?page=tgmpa-install-plugins' ) . '">', '</a>' ),
 		) ) );
+
 	}//if Kirki exists
 
 
@@ -272,29 +274,6 @@ function glaciar_lite_customize_register( $wp_customize ) {
         'section'  => 'glaciar_lite_map_section',
         'settings' => 'glaciar_lite_map_image',
     ) ) );
-
-	$wp_customize->add_setting( 'glaciar_lite_map_key', array( 'default' => '', 'sanitize_callback' => 'glaciar_lite_sanitize_text', 'type' => 'theme_mod' ) );
-	$wp_customize->add_control( 'glaciar_lite_map_key', array(
-		'type' => 'text',
-		'section' => 'glaciar_lite_map_section', // Required, core or custom.
-		'label' => esc_attr__( "Google Maps API Key", 'glaciar-lite' ),
-		'description' => sprintf( esc_html__( "An API Key is required for Google Maps to work. %s Sign up for one here %s (it's free for small usage)", 'glaciar-lite' ), '<a href="https://developers.google.com/maps/documentation/javascript/get-api-key">', '</a>' )
-	) );
-
-	$wp_customize->add_setting( 'glaciar_lite_map_lat_long', array( 'default' => '40.725987, -74.002447', 'sanitize_callback' => 'glaciar_lite_sanitize_lat_long', 'type' => 'theme_mod' ) );
-	$wp_customize->add_control( 'glaciar_lite_map_lat_long', array(
-		'type' => 'text',
-		'section' => 'glaciar_lite_map_section', // Required, core or custom.
-		'label' => esc_attr__( "Latitude and Longitude", 'glaciar-lite' ),
-		'description' => esc_attr__( 'Comma separated. Example: 40.725987, -74.002447', 'glaciar-lite' )
-	) );
-
-	$wp_customize->add_setting( 'glaciar_lite_map_zoom', array( 'default' => '13', 'sanitize_callback' => 'glaciar_lite_sanitize_integer', 'type' => 'theme_mod' ) );
-	$wp_customize->add_control( 'glaciar_lite_map_zoom', array(
-		'type' => 'text',
-		'section' => 'glaciar_lite_map_section', // Required, core or custom.
-		'label' => esc_attr__( "Zoom", 'glaciar-lite' ),
-	) );
 
 	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'contact-form' ) ) {
 		$wp_customize->add_setting( 'glaciar_lite_contact_email', array( 'default' => '', 'sanitize_callback' => 'glaciar_lite_sanitize_text', 'type' => 'theme_mod' ) );
@@ -316,7 +295,7 @@ function glaciar_lite_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'glaciar_lite_contact_form', array( 'default' => '', 'sanitize_callback' => 'glaciar_lite_sanitize_text', ) );
 		$wp_customize->add_control( new glaciar_lite_Display_Text_Control( $wp_customize, 'glaciar_lite_contact_form', array(
 			'section' => 'glaciar_lite_map_section', // Required, core or custom.
-			'label' => sprintf( esc_html__( 'Please activate the Contact Form module of %s Jetpack %s plugin.', 'glaciar-lite' ), '<a href="' . get_admin_url( null, 'admin.php?page=jetpack_modules' ) .'">', '</a>' ),
+			'label' => sprintf( esc_html__( 'Please activate the Contact Form module of %1$s Jetpack %2$s plugin.', 'glaciar-lite' ), '<a href="' . get_admin_url( null, 'admin.php?page=jetpack_modules' ) .'">', '</a>' ),
 		) ) );
 	}
 	
@@ -333,10 +312,6 @@ function glaciar_lite_customize_register( $wp_customize ) {
 		'section' => 'glaciar_lite_pro_section', // Required, core or custom.
 		'label' => sprintf( __( 'Check out the PRO version for more features. %1$s View PRO version %2$s', 'glaciar-lite' ), '<a target="_blank" class="button" href="https://www.quemalabs.com/theme/glaciar/" style="width: 80%; margin: 10px auto; display: block; text-align: center;">', '</a>' ),
 	) ) );
-
-	
-
-
 
 
 
@@ -416,12 +391,6 @@ function glaciar_lite_pro_version( $input ) {
     return $input;
 }
 
-/**
- * Sanitize Any
- */
-function glaciar_lite_sanitize_any( $input ) {
-    return $input;
-}
 
 /**
  * Sanitize Text
@@ -492,43 +461,6 @@ function glaciar_lite_sanitize_lat_long( $coords ) {
 
 
 
-/**
- * Create the "PRO version" buttons
- */
-if ( ! function_exists( 'glaciar_lite_pro_btns' ) ){
-	function glaciar_lite_pro_btns( $args ){
-
-		$wp_customize = $args['wp_customize'];
-		$title = $args['title'];
-		$label = $args['label'];
-		if ( isset( $args['priority'] ) || array_key_exists( 'priority', $args ) ) {
-			$priority = $args['priority'];
-		}else{
-			$priority = 120;
-		}
-		if ( isset( $args['panel'] ) || array_key_exists( 'panel', $args ) ) {
-			$panel = $args['panel'];
-		}else{
-			$panel = '';
-		}
-
-		$section_id = sanitize_title( $title );
-
-		$wp_customize->add_section( $section_id , array(
-			'title'       => $title,
-			'priority'    => $priority,
-			'panel' => $panel,
-		) );
-		$wp_customize->add_setting( $section_id, array(
-			'sanitize_callback' => 'glaciar_lite_pro_version'
-		) );
-		$wp_customize->add_control( new glaciar_lite_Pro_Version( $wp_customize, $section_id, array(
-	        'section' => $section_id,
-	        'label' => $label
-		   )
-		) );
-	}
-}//end if function_exists
 
 /**
  * Display Text Control
@@ -552,9 +484,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			    'strong' => array(),
 			    'span' => array(),
 			);
-			$label = wp_kses( $this->label, $wp_kses_args );
 	        ?>
-			<p><?php echo $label; ?></p>
+			<p><?php echo wp_kses( $this->label, $wp_kses_args ); ?></p>
 		<?php
 		}
 	}
@@ -569,9 +500,13 @@ add_action( 'wp_ajax_nopriv_glaciar_lite_get_image_src', 'glaciar_lite_get_image
 add_action( 'wp_ajax_glaciar_lite_get_image_src', 'glaciar_lite_get_image_src' );
 
 function glaciar_lite_get_image_src() {
-	$image_id = $_POST['image_id'];
+	if ( isset( $_POST['image_id'] ) ){
+		$image_id = sanitize_text_field( wp_unslash( $_POST['image_id'] ) );
+	}else{
+		return false;
+	}
 	$image = wp_get_attachment_image_src( absint( $image_id ), 'full' );
 	$image = $image[0];
-	echo $image;
+	echo wp_kses_post( $image );
 	die();
 }

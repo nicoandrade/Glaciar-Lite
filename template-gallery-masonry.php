@@ -26,7 +26,8 @@ get_header(); ?>
 					</header><!-- .entry-header -->
 
 					<?php
-					if ( ! empty( get_the_content() ) ) {
+					$glaciar_lite_page_content = get_the_content();
+					if ( ! empty( $glaciar_lite_page_content ) ) {
 					?>
 						<div class="entry-content">
 							<?php
@@ -85,7 +86,7 @@ get_header(); ?>
 								echo "\t\t\t\t<a href='" . esc_url( $cropped_image_2x[0] ) . "' data-width='" . esc_attr( $cropped_image_2x['1'] ) . "' data-height='" . esc_attr( $cropped_image_2x['2'] ) . "'></a>\n";
 								if ( $image_caption ) {
 									echo '<div class="portfolio-item-hover">';
-								        echo '<h4 class="portfolio-item-title">' . esc_html( $image_caption ) . '<img class="horizontal-lines" alt="lines" src="' . get_template_directory_uri() . '/images/horizontal.svg"></h4>';
+								        echo '<h4 class="portfolio-item-title">' . esc_html( $image_caption ) . '<img class="horizontal-lines" alt="lines" src="' . esc_url( get_template_directory_uri() ) . '/images/horizontal.svg"></h4>';
 									echo "\t\t\t</div>\n";
 
 								}

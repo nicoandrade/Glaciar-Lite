@@ -30,11 +30,12 @@ class glaciar_lite_Contact_Info extends WP_Widget{
 
         echo $args['before_widget'];
 
+            $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
         ?>
 
             <div class="widget_contact_info">
 
-                <h4><?php if( !empty( $instance['title'] ) ): echo apply_filters( 'widget_title', $instance['title'] ); endif; ?></h4>
+                <?php if( ! empty( $title ) ): echo $args['before_title'] . $title . $args['after_title']; endif; ?>
 
                 <ul>
                     <?php if( !empty( $instance['address'] ) ){ ?>

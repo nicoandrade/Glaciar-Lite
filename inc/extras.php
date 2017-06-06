@@ -270,23 +270,23 @@ if ( ! function_exists( 'glaciar_lite_post_navigation' ) ) {
                     <?php if ( ! empty( $prev_post ) ): ?>
                     <div class="nav-previous" <?php echo $post_nav_bck; ?>>
                         <?php
-                        $prev_text = esc_html( 'Previous Post', 'glaciar-lite' );
+                        $prev_text = __( 'Previous Post', 'glaciar-lite' );
                         if ( glaciar_lite_is_portfolio_type( get_post_type() ) ) {
-                            $prev_text = esc_html( 'Previous Project', 'glaciar-lite' );
+                            $prev_text = __( 'Previous Project', 'glaciar-lite' );
                         }
                         ?>
-                        <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev"><span><?php echo $prev_text; ?></span><?php echo esc_html( $prev_post->post_title ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" rel="prev"><span><?php echo esc_html( $prev_text ); ?></span><?php echo esc_html( $prev_post->post_title ); ?></a>
                     </div>
                     <?php endif; ?>
                     <?php if ( ! empty( $next_post ) ): ?>
                     <div class="nav-next" <?php echo $post_nav_bck_next; ?>>
                         <?php
-                        $next_text = esc_html( 'Next Post', 'glaciar-lite' );
+                        $next_text = __( 'Next Post', 'glaciar-lite' );
                         if ( glaciar_lite_is_portfolio_type( get_post_type() ) ) {
-                            $next_text = esc_html( 'Next Project', 'glaciar-lite' );
+                            $next_text = __( 'Next Project', 'glaciar-lite' );
                         }
                         ?>
-                        <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"><span><?php echo $next_text; ?></span><?php echo esc_html( $next_post->post_title ); ?></a>
+                        <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" rel="next"><span><?php echo esc_html( $next_text ); ?></span><?php echo esc_html( $next_post->post_title ); ?></a>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -316,19 +316,6 @@ function glaciar_lite_darken_color( $rgb, $darker = 2 ) {
 
     return $hash.$R.$G.$B;
 }
-
-/**
-* Adds HTML Schema type for the logo
-*
-* @return string
-*/
-add_filter( 'get_custom_logo', function( $html ) {
-    return sprintf(
-        '<span itemscope itemtype="%1$s">%2$s</span>',
-        esc_url( 'https://schema.org/Brand' ),
-        $html
-    );
-} );
 
 /**
  * Enqueues front-end CSS for retina images of portfolio.
