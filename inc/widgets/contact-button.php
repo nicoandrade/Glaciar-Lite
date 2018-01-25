@@ -35,9 +35,9 @@ class glaciar_lite_Contact_Button extends WP_Widget{
 
             <div class="widget_glaciar_lite_work_button">
                 
-                <h4 class="widget_glaciar_lite_work_title"><?php if( ! empty( $title ) ): echo $title; endif; ?></h4>
-                <?php if( !empty( $instance['button-text'] ) ){ ?>
-                    <a href="<?php echo esc_url( $instance['url'] ); ?>" class="ql_primary_btn"><?php echo $instance['button-text']; ?></a>
+                <h4 class="widget_glaciar_lite_work_title"><?php if( ! empty( $title ) ): echo esc_html( $title ); endif; ?></h4>
+                <?php if( ! empty( $instance['button-text'] ) ){ ?>
+                    <a href="<?php echo esc_url( $instance['url'] ); ?>" class="ql_primary_btn"><?php echo esc_html( $instance['button-text'] ); ?></a>
                 <?php } ?>
 
                 <div class="clearfix"></div>
@@ -46,8 +46,6 @@ class glaciar_lite_Contact_Button extends WP_Widget{
         <?php
 
         echo $args['after_widget'];
-
-
 
     }
 
@@ -109,7 +107,7 @@ class glaciar_lite_Contact_Button extends WP_Widget{
         <p>
             <label for="<?php echo $this->get_field_id('button-text'); ?>"><?php esc_html_e( 'Button Text', 'glaciar-lite' ); ?></label><br />
 
-            <input type="text" name="<?php echo $this->get_field_name('button-text'); ?>" id="<?php echo $this->get_field_id('button-text'); ?>" value="<?php if( !empty( $instance['button-text'] ) ): echo $instance['button-text']; endif; ?>" class="widefat" />
+            <input type="text" name="<?php echo esc_attr( $this->get_field_name('button-text') ); ?>" id="<?php echo esc_attr( $this->get_field_id('button-text') ); ?>" value="<?php if( ! empty( $instance['button-text'] ) ): echo $instance['button-text']; endif; ?>" class="widefat" />
         </p>
 
         <p>
